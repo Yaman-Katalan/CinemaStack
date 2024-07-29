@@ -1,0 +1,324 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-one: #9acd32;
+  --color-one: #76b852;
+
+  --color-two: #0f0f0f;
+  --color-three: #272727;
+  --color-four: white;
+  --color-eight: #222;
+
+  --color-nine: grey;
+  --color-nine: #4b79a1;
+  --color-nine: #aeb6b8;
+
+  --color-ten: linear-gradient(to right, #283e51, #4b79a1);
+
+  --color-eleven: linear-gradient(to right, #434343, #000000);
+  --color-eleven: #323b43;
+
+  --color-seven: tomato;
+  --color-seven: #76b852;
+
+  /* On Hover Colors */
+  --color-five: rgba(153, 205, 50, 0.4);
+  --color-five: #76b85277;
+
+  --color-six: #111111bc;
+  --color-six: rgba(0, 0, 0, 0.8);
+
+  /* Other */
+
+  --color-A: #4b79a1;
+  --color-A: #76b852;
+
+  --color-B: linear-gradient(to right, #434343, #000000);
+  --color-C: rgba(165, 42, 42, 0.455);
+  --color-D: rgba(165, 42, 42, 0.455);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("./assets/scream_pic.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* -------------------  */
+/* -------------------  */
+/* -------------------  */
+
+.main-container .side-section {
+  position: relative;
+  z-index: 1000;
+}
+
+.main-container ul.nav {
+  background-color: #0f0f0f;
+  padding: 2rem 10px;
+
+  /* position: relative; */
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* display: none; */
+  /* transform: translateX(-100px); */
+  /* width: 0; */
+}
+
+.main-container ul.nav > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.main-container ul.nav > li {
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.main-container ul.nav > li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main-container ul.nav > li i {
+  color: white;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* -------------------  */
+
+.main-container ul.pop::-webkit-scrollbar {
+  width: 5px;
+}
+
+.main-container ul.pop::-webkit-scrollbar-track {
+  background-color: var(--color-two);
+}
+
+.main-container ul.pop::-webkit-scrollbar-thumb {
+  background-color: var(--color-one);
+}
+
+.main-container ul.pop {
+  position: relative;
+  z-index: 1000;
+  scroll-behavior: smooth;
+  padding: 20px;
+  overflow-y: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0;
+
+  background-color: var(--color-three);
+
+  /*  */
+  transition: 0.3s;
+  transform: translateX(-350px);
+}
+
+.main-container ul.pop.appear {
+  transform: translateX(0);
+}
+
+.main-container ul.pop li {
+  cursor: pointer;
+  padding: 10px 20px;
+
+  color: var(--color-four);
+
+  border-radius: 1rem;
+  width: 12rem;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+.main-container ul.pop li:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.main-container ul.pop li:hover {
+  color: var(--color-one);
+}
+
+.main-container ul.pop li.active {
+  background-color: var(--color-five);
+}
+
+.main-container ul.pop li i {
+  margin-right: 30px;
+}
+
+/* -------------------  */
+
+/* -------------------  */
+
+main.body {
+  /* min-height: 5000px; */
+  flex-grow: 1;
+  padding: 2rem 5rem;
+  backdrop-filter: blur(40px);
+}
+
+main.body h1 {
+  padding-bottom: 1.3rem;
+
+  text-align: center;
+  color: var(--color-four);
+  margin-bottom: 3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  position: relative;
+}
+
+main.body h1::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 0.5rem;
+  width: 5rem;
+  border-radius: 0.25rem;
+  background-color: goldenrod;
+}
+
+main.body .movie-sec {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 5rem;
+}
+
+main.body .movie-sec .movie {
+  border: 0.4rem solid var(--color-nine);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  /* background-color: antiquewhite; */
+  background-color: var(--color-nine);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  /* - - - - - */
+  transition: border 0.3s;
+  position: relative;
+}
+
+main.body .movie-sec .movie:hover {
+  border-color: var(--color-A);
+}
+
+main.body .movie-sec .movie .movie-details {
+  color: var(--color-seven);
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  padding-left: 1.5rem;
+  padding-top: 3rem;
+
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--color-six);
+
+  transition: 0.2s ease-in;
+  /* transform: translateX(-100%); */
+  opacity: 0;
+  z-index: -1;
+}
+
+main.body .movie-sec .movie .movie-details.active {
+  /* transform: translateX(0); */
+  opacity: 1;
+  z-index: 1;
+}
+
+main.body .movie-sec .movie .movie-details span {
+  display: block;
+}
+
+main.body .movie-sec .movie .movie-details span:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+main.body .movie-sec .movie img {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+main.body .movie-sec .movie h2 {
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-A);
+  background: var(--color-ten);
+
+  font-size: 1.4rem;
+  text-align: center;
+  color: var(--color-four);
+  margin: 0;
+  padding: 1.8rem 0.5rem 1.2rem;
+  position: relative;
+}
+
+main.body .movie-sec .movie h2 span {
+  background-color: var(--color-eight);
+
+  color: goldenrod;
+  border: 0.2rem solid var(--color-nine);
+
+  /* border-top-color: gold;
+  border-bottom-color: brown;
+  border-left-color: mediumpurple;
+  border-right-color: grey; */
+
+  font-size: 1.2rem;
+  position: absolute;
+
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% - 1.3rem);
+}
