@@ -181,7 +181,7 @@ a {
 main.body {
   /* min-height: 5000px; */
   flex-grow: 1;
-  padding: 2rem 5rem;
+  padding: 2rem 3rem;
   backdrop-filter: blur(40px);
 }
 
@@ -211,6 +211,14 @@ main.body .movie-sec {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 5rem;
+}
+
+@media (max-width: 768px) {
+  main.body .movie-sec {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    gap: 3rem;
+  }
 }
 
 main.body .movie-sec .movie {
